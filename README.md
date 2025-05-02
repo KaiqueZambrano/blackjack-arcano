@@ -32,8 +32,8 @@ O objetivo do jogo é somar o valor das cartas o mais próximo possível de 21, 
 | XIV   | **A Temperança**      | Divide o valor de uma carta (arcano menor) por dois, arredondando para cima.                       | Imediato          |
 | XV    | **O Diabo**           | Compra uma carta com valor aleatório entre -5 e +15.                                               | Imediato          |
 | XVI   | **A Torre**           | Todos os jogadores descartam uma carta aleatória de sua mão.                                       | Imediato          |
-| XVII  | **A Estrela**         | Compra uma carta extra sem risco (permite descartar a carta).                                      | Passiva           |
-| XVIII | **A Lua**             | Repete o efeito do último Arcano Maior ativado.                                                    | Passiva           |
+| XVII  | **A Estrela**         | Compra uma carta extra sem risco (permite descartar a carta).                                      | Imediato          |
+| XVIII | **A Lua**             | Repete o efeito do último Arcano Maior ativado.                                                    | Imediato          |
 | XIX   | **O Sol**             | Revela todas as cartas em jogo (mãos dos jogadores e do dealer).                                   | Imediato          |
 | XX    | **O Julgamento**      | Troca a mão do jogador com a mão do dealer (ou vice-versa).                                        | Imediato          |
 | XXI   | **O Mundo**           | Vitória automática se o jogador (ou dealer) tiver 21 ou mais pontos na mão atual.                  | Imediato          |
