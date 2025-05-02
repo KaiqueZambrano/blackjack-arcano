@@ -39,9 +39,10 @@ O objetivo do jogo é somar o valor das cartas o mais próximo possível de 21, 
 | XXI   | **O Mundo**           | Vitória automática se o jogador (ou dealer) tiver 21 ou mais pontos na mão atual.                  | Imediato          |
 
 ### Como Jogar
-1. As cartas são embaralhadas.
-2. O jogador e o dealer recebem duas cartas cada, sendo que o jogador pode ver apenas a primeira carta do dealer.
-3. O jogador escolhe entre **Hit** (comprar uma carta) ou **Stand** (manter a mão atual).
-4. O dealer compra cartas até atingir no mínimo 17 pontos.
-5. O jogo segue até que o jogador ou o dealer estoure (ultrapasse 21 pontos), ou o jogador escolha **Stand**.
-6. Se o jogador ou o dealer tiverem 21 pontos, o jogo termina.
+1. O jogador faz sua aposta.
+2. As cartas são embaralhadas.
+3. O jogador e o dealer recebem duas cartas cada, sendo que o jogador pode ver apenas a primeira carta do dealer.
+4. O jogador escolhe entre **Hit** (comprar uma carta) ou **Stand** (manter a mão atual).
+5. O dealer compra cartas até atingir no mínimo 17 pontos.
+6. O jogo segue até que o jogador ou o dealer estoure (ultrapasse 21 pontos), ou o jogador escolha **Stand**.
+7. Se o jogador ou o dealer tiverem 21 pontos, o jogo termina.
