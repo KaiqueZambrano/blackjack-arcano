@@ -29,7 +29,7 @@ O objetivo do jogo é somar o valor das cartas o mais próximo possível de 21, 
 | XI    | **A Força**           | Permite reduzir ou aumentar o valor de uma carta em até cinco pontos, mantendo o mínimo de 1 ponto.| Imediato          |
 | XII   | **O Enforcado**       | Troca toda a mão do jogador por duas novas cartas (arcanos menores).                               | Imediato          |
 | XIII  | **A Morte**           | Permite eliminar uma carta (arcano menor) da mão do jogador.                                       | Imediato          |
-| XIV   | **A Temperança**      | Divide o valor de uma carta (arcano menor) por dois, arredondando para cima.                       | Imediato          |
+| XIV   | **A Temperança**      | Divide o valor da carta de maior valor por dois, arredondando para cima.                           | Imediato          |
 | XV    | **O Diabo**           | Compra uma carta com valor aleatório entre -5 e +15.                                               | Imediato          |
 | XVI   | **A Torre**           | Todos os jogadores descartam uma carta aleatória de sua mão.                                       | Imediato          |
 | XVII  | **A Estrela**         | Compra uma carta extra sem risco (permite descartar a carta).                                      | Imediato          |
