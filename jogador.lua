@@ -23,7 +23,7 @@ function jogador:hit(baralho)
     self:comprarCarta(baralho)
     self.pontuacao = self:calcularMao()
 
-    if self.pontuacao > 33 then
+    if self.pontuacao > 33 and not self.ignorar_estouro then
         self.estourou = true
     end
 end

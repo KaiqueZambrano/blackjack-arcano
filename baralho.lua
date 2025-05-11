@@ -66,4 +66,8 @@ function baralho:puxarSemArcanoMaior()
     return nil
 end
 
+function baralho:verProximaCarta()
+    return self.cartas[#self.cartas] or "nenhuma carta restante"
+end
+
 return baralho

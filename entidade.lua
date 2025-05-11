@@ -1,12 +1,19 @@
 local entidade = {}
 entidade.__index = entidade
 
+local efeitos = require("efeitos")
+
 function entidade:comprarCarta(baralho)
-    table.insert(self.mao, baralho:puxar())
+    entidade.ignorar_estouro = false
+    local carta = baralho:puxar()
+    table.insert(self.mao, carta)
+    efeitos:aplicar(carta, self, baralho)
 end
 
 function entidade:comprarCartaSemArcanoMaior(baralho)
-    table.insert(self.mao, baralho:puxarSemArcanoMaior())
+    entidade.ignorar_estouro = false
+    local carta = baralho:puxarSemArcanoMaior()
+    table.insert(self.mao, carta)
 end
 
 function entidade:calcularMao()
@@ -31,7 +38,7 @@ function entidade:calcularMao()
         ases = ases - 1
     end
 
-    return valor_mao
+    return valor_mao + self.buff - self.debuff
 end
 
 function entidade:obterCartas(baralho)

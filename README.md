@@ -21,7 +21,7 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 | III   | **A Imperatriz**      | Dissipa todos os **debuffs** do jogador e ignora um possível estouro, como um gesto de graça.              | Imediato          |
 | IV    | **O Imperador**       | Uma vez por partida, imponha ordem: ignore o estouro e retorne a última carta comprada ao baralho.         | Passiva           |
 | V     | **O Hierofante**      | Com sabedoria ritual, escolha uma carta da sua mão e troque por uma nova.                                  | Imediato          |
-| VI    | **Os Amantes**        | O destino entrelaça os caminhos: uma carta aleatória é trocada entre o jogador e o dealer.                 | Imediato          |
+| VI    | **Os Amantes**        | O destino oferece duas opções de carta: escolha uma para manter, a outra é descartada.                     | Imediato          |
 | VII   | **O Carro**           | Avance com determinação: compre uma carta e, se desejar, recuse-a para comprar outra.                      | Imediato          |
 | VIII  | **A Justiça**         | A balança se equilibra: todos revelam suas mãos e o jogador com a maior pontuação é declarado vencedor.    | Imediato          |
 | IX    | **O Eremita**         | Em silêncio e reflexão, devolva uma carta comprada ao baralho.                                             | Imediato          |
@@ -52,3 +52,6 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 1. Nenhuma das cartas distribuídas no início do jogo pode ser um Arcano Maior.
 2. O dealer não pode comprar Arcanos Maiores.
 3. Todas as cartas devolvidas devem ser retornadas ao fundo do baralho.
+
+### Observações
+1. As cartas compradas por arcanos maiores são sempre numéricas.
