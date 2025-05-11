@@ -52,7 +52,11 @@ function baralho:puxarSemArcanoMaior()
     return nil
 end
 
-function baralho:verProximaCarta()
+function baralho:devolver(carta)
+    table.insert(self.cartas, 1, carta)
+end
+
+function baralho:verProxima()
     return self.cartas[#self.cartas] or "nenhuma carta restante"
 end
 

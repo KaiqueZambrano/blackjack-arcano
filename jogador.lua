@@ -24,7 +24,15 @@ function jogador:hit(baralho)
     self.pontuacao = self:calcularMao()
 
     if self.pontuacao > 33 and not self.ignorar_estouro then
-        self.estourou = true
+        if self.o_imperador then
+            print("O estouro foi evitado. A última carta foi devolvida ao baralho.")
+            local ultima_carta = table.remove(self.mao)
+            baralho:devolver(ultima_carta)
+            self.pontuacao = self:calcularMao()
+            self.o_imperador = false
+        else
+            self.estourou = true
+        end
     end
 end
 
