@@ -19,7 +19,7 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 | ----- | --------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------- |
 | 0     | **O Louco**           | Compre duas cartas sem se preocupar com o estouro. Mas cuidado: se sair ileso, perde imediatamente.        | Imediato          |
 | I     | **O Mago**            | Canalize sua vontade: escolha um valor entre 2 e 11 para somar à sua pontuação (**buff**).                 | Imediato          |
-| II    | **A Sacerdotisa**     | Com um olhar além do véu, revele a próxima carta do baralho.                                               | Imediato          |
+| II    | **A Sacerdotisa**     | Com um olhar além do véu, revele as próximas três carta do baralho.                                        | Imediato          |
 | III   | **A Imperatriz**      | Dissipa todos os **debuffs** do jogador e ignora um possível estouro, como um gesto de graça.              | Imediato          |
 | IV    | **O Imperador**       | Uma vez por partida, imponha ordem: ignore o estouro e retorne a última carta comprada ao baralho.         | Passiva           |
 | V     | **O Hierofante**      | Com sabedoria ritual, escolha uma carta da sua mão e troque por uma nova.                                  | Imediato          |
@@ -40,20 +40,46 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 | XX    | **O Julgamento**      | No momento do julgamento, se o jogador perder, a partida é reiniciada, oferecendo uma nova chance.         | Imediato          |
 | XXI   | **O Mundo**           | Com a harmonia do universo, garante vitória automática.                                                    | Imediato          |
 
+### Bônus por combinação
+Além da soma das cartas, combinações especiais concedem bônus adicionais de pontuação:
+
+| Combinação                   | Requisitos                                      | Bônus de Pontuação |
+| ---------------------------- | ----------------------------------------------- | ------------------ |
+| **Par (Dupla)**              | Duas cartas do mesmo valor                      | +1 pontos          |
+| **Dois Pares**               | Duas duplas de valores diferentes               | +2 pontos          |
+| **Trinca (Three of a Kind)** | Três cartas do mesmo valor                      | +3 pontos          |
+| **Sequência (Straight)**     | Três cartas em sequência                        | +2 pontos          |
+| **Flush (Naipe Igual)**      | Três ou mais cartas do mesmo naipe              | +2 pontos          |
+| **Full House**               | Uma trinca + uma dupla                          | +4 pontos          |
+| **Quadra (Four of a Kind)**  | Quatro cartas do mesmo valor                    | +5 pontos          |
+| **Straight Flush**           | Três ou mais cartas em sequência do mesmo naipe | +6 pontos          |
+
+## Hierarquia para as combinações:
+
+| Carta      | Valor ordinal (para combinações) |
+| ---------- | -------------------------------- |
+| Ás         | 1 ou 15                          |
+| 2–10       | 2 a 10                           |
+| Valete     | 11                               |
+| Cavaleiro  | 12                               |
+| Rainha     | 13                               |
+| Rei        | 14                               |
+| Ás         | 1 ou 15                          |
+
 ### Como Jogar
 1. O jogador realiza sua aposta.
 2. As cartas são embaralhadas.
 3. O jogador e o dealer recebem duas cartas cada.
 4. O jogador escolhe entre **Hit** (comprar uma carta) ou **Stand** (manter a mão atual).
 5. Se o jogador **estourar** (ultrapassar 33 pontos), sofre **derrota imediata**.
-6. Caso escolha **Stand**, o dealer comprará cartas até atingir, no mínimo, 27 pontos.
-7. Se o dealer **estourar**, o jogador obtém **vitória imediata**.
-8. Caso contrário, compara-se a pontuação, e vence quem tiver mais pontos.
+6. Alcançar a *Mão Perfeita* (33 pontos) garante **vitória imediata** ao jogador
+7. Caso escolha **Stand**, o dealer comprará cartas até atingir, no mínimo, 27 pontos.
+8. Se o dealer **estourar**, o jogador obtém **vitória imediata**.
+9. Caso contrário, compara-se a pontuação, e vence quem tiver mais pontos.
 
 ### Restrições
 1. Nenhuma das cartas distribuídas no início do jogo pode ser um Arcano Maior.
 2. O dealer não pode comprar Arcanos Maiores.
-3. Todas as cartas devolvidas devem ser retornadas ao fundo do baralho.
-
-### Observações
-1. As cartas compradas por arcanos maiores são sempre Arcanos Menores.
+3. As cartas compradas por arcanos maiores são sempre Arcanos Menores.
+4. Todas as cartas devolvidas devem ser retornadas ao fundo do baralho.
+5. As combinações de bônus não se acumulam. Apenas a combinação mais valiosa da mão é considerada para o bônus de pontuação.
