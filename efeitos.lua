@@ -39,7 +39,7 @@ efeitos.lista["A Sacerdotisa"] = function(entidade, baralho)
 end
 
 efeitos.lista["A Imperatriz"] = function(entidade, baralho)
-    print("[Efeito] Dissipa todos os **debuffs** do jogador e ignora um possível estouro, como um gesto de graça.")
+    print("[Efeito] Dissipa todos os debuffs do jogador e ignora um possível estouro, como um gesto de graça.")
     entidade.debuff = 0
     entidade.ignorar_estouro = true 
 end

@@ -56,4 +56,4 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 3. Todas as cartas devolvidas devem ser retornadas ao fundo do baralho.
 
 ### Observações
-1. As cartas compradas por arcanos maiores são sempre numéricas.
+1. As cartas compradas por arcanos maiores são sempre Arcanos Menores.
