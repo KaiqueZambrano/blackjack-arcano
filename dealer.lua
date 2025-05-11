@@ -1,26 +1,23 @@
 local dealer = {}
 local entidade = require("entidade")
 
-setmetatable(dealer, { __index = entidade })
+setmetatable(dealer, entidade)
 
 dealer.mao = {}
 dealer.pontuacao = 0
 dealer.buff = 0
 dealer.debuff = 0
 dealer.estourou = false
-dealer.parou = false
 
 function dealer:rodadaDoDealer(baralho)
-    while self.pontuacao < 45 do
-        self:comprarCarta(baralho)
+    while self.pontuacao < 27 do
+        self:comprarCartaSemArcanoMaior(baralho)
         self.pontuacao = self:calcularMao()
 
-        if self.pontuacao > 50 then
+        if self.pontuacao > 33 then
             self.estourou = true
         end
     end
-
-    self.parou = true
 end
 
 return dealer

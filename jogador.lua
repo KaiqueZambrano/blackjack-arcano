@@ -1,7 +1,7 @@
 local jogador = {}
 local entidade = require("entidade")
 
-setmetatable(jogador, { __index = entidade })
+setmetatable(jogador, entidade)
 
 jogador.aposta = 0
 jogador.mao = {}
@@ -23,7 +23,7 @@ function jogador:hit(baralho)
     self:comprarCarta(baralho)
     self.pontuacao = self:calcularMao()
 
-    if self.pontuacao > 50 then
+    if self.pontuacao > 33 then
         self.estourou = true
     end
 end

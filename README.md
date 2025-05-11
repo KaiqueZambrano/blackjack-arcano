@@ -5,45 +5,50 @@
 ## Regras de Negócio
 
 ### Objetivo
-O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possível de 50 pontos, **sem ultrapassá-los** (ou seja, sem **estourar**).
+O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possível de 33 pontos, **sem ultrapassá-los** (isto é, sem **estourar**).
 
 ### Cartas
-- Cartas **numéricas** e os **Arcanos Maiores** possuem valor igual ao seu número.
-- As cartas **Cavaleiro**, **Rainha**, **Rei** e **Valete** valem **10 pontos** cada.
-- O **Ás** pode valer **1 ponto** ou **11 pontos**, dependendo do que for mais vantajoso para a mão.
-- Os **Arcanos Maiores**, exceto quando puxados na primeira rodada, ativam **efeitos especiais** que influenciam a partida.
+- Cartas **numéricas** têm valor igual ao número que representam.
+- As cartas **Valete**, **Cavaleiro**, **Rainha** e **Rei** valem **10 pontos** cada.
+- O **Ás** pode valer **1 ponto** ou **11 pontos**, conforme o que for mais vantajoso para a mão do jogador.
+- **Arcanos Maiores** *não possuem valor numérico*, mas ativam **efeitos especiais** que influenciam a partida.
 
-| Nº    | Arcano Maior          | Efeito Especial                                                                                       | Tempo de Ativação |
-| ----- | --------------------- | ----------------------------------------------------------------------------------------------------- | ----------------- |
-| 0     | **O Louco**           | Permite comprar duas cartas sem risco de estouro nesta rodada.                                        | Imediato          |
-| I     | **O Mago**            | Permite *buffar* (aumentar) a pontuação em um valor entre 2 e 11.                                     | Imediato          |
-| II    | **A Sacerdotisa**     | Revela a próxima carta do baralho.                                                                    | Imediato          |
-| III   | **A Imperatriz**      | Remove todos os *debuffs* (efeitos negativos).                                                        | Imediato          |
-| IV    | **O Imperador**       | Em caso de empate, o jogador (ou dealer) é declarado vencedor.                                        | Passiva           |
-| V     | **O Hierofante**      | Permite trocar uma carta da mão por uma nova.                                                         | Imediato          |
-| VI    | **Os Amantes**        | Permite a troca de uma carta entre o dealer e o jogador.                                              | Imediato          |
-| VII   | **O Carro**           | Permite comprar duas cartas simultaneamente.                                                          | Imediato          |
-| VIII  | **A Justiça**         | Todos revelam suas mãos. O jogador com a maior pontuação vence.                                       | Imediato          |
-| IX    | **O Eremita**         | Permite devolver uma carta comprada ao fundo do baralho.                                              | Imediato          |
-| X     | **A Roda da Fortuna** | Ativa um efeito aleatório: comprar uma carta, dobrar a aposta ou receber um *debuff* de 10 pontos.    | Imediato          |
-| XI    | **A Força**           | Anula o efeito do próximo Arcano Maior ativado.                                                       | Passiva           |
-| XII   | **O Enforcado**       | Substitui toda a mão do jogador por duas novas cartas e **O Enforcado**.                              | Imediato          |
-| XIII  | **A Morte**           | Permite remover até três cartas da mão.                                                               | Imediato          |
-| XIV   | **A Temperança**      | Impede que o jogador estoure uma única vez (a última carta comprada é devolvida ao fundo do baralho). | Passiva           |
-| XV    | **O Diabo**           | Concede um *buff* ou *debuff* aleatório entre -10 e +20 pontos.                                       | Imediato          |
-| XVI   | **A Torre**           | Todos os jogadores descartam aleatoriamente uma carta de suas mãos.                                   | Imediato          |
-| XVII  | **A Estrela**         | Se o jogador ultrapassar 50 pontos nesta rodada, recebe um *debuff* proporcional ao excesso.          | Passiva           |
-| XVIII | **A Lua**             | Repete o efeito do último Arcano Maior ativado.                                                       | Imediato          |
-| XIX   | **O Sol**             | Revela todas as cartas em jogo.                                                                       | Imediato          |
-| XX    | **O Julgamento**      | Troca a mão do jogador com a do dealer (ou vice-versa).                                               | Imediato          |
-| XXI   | **O Mundo**           | Garante vitória automática se o jogador (ou dealer) tiver 40 ou mais pontos na mão atual.             | Imediato          |
+| Nº    | Arcano Maior          | Efeito Especial                                                                                            | Tempo de Ativação |
+| ----- | --------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------- |
+| 0     | **O Louco**           | Compre duas cartas sem se preocupar com o estouro. Mas cuidado: se sair ileso, perde imediatamente.        | Imediato          |
+| I     | **O Mago**            | Canalize sua vontade: escolha um valor entre 2 e 11 para somar à sua pontuação (**buff**).                 | Imediato          |
+| II    | **A Sacerdotisa**     | Com um olhar além do véu, revele a próxima carta do baralho.                                               | Imediato          |
+| III   | **A Imperatriz**      | Dissipa todos os **debuffs** do jogador e ignora um possível estouro, como um gesto de graça.              | Imediato          |
+| IV    | **O Imperador**       | Uma vez por partida, imponha ordem: ignore o estouro e retorne a última carta comprada ao baralho.         | Passiva           |
+| V     | **O Hierofante**      | Com sabedoria ritual, escolha uma carta da sua mão e troque por uma nova.                                  | Imediato          |
+| VI    | **Os Amantes**        | O destino entrelaça os caminhos: uma carta aleatória é trocada entre o jogador e o dealer.                 | Imediato          |
+| VII   | **O Carro**           | Avance com determinação: compre uma carta e, se desejar, recuse-a para comprar outra.                      | Imediato          |
+| VIII  | **A Justiça**         | A balança se equilibra: todos revelam suas mãos e o jogador com a maior pontuação é declarado vencedor.    | Imediato          |
+| IX    | **O Eremita**         | Em silêncio e reflexão, devolva uma carta comprada ao baralho.                                             | Imediato          |
+| X     | **A Roda da Fortuna** | O destino gira: triplique sua aposta em vitória, dobre-a em derrota ou sofra um **debuff** de 5 pontos.    | Imediato          |
+| XI    | **A Força**           | Com sua força interior, anule o efeito do próximo Arcano Maior ativado.                                    | Passiva           |
+| XII   | **O Enforcado**       | Em um sacrifício, toda a mão do jogador é substituída por duas novas cartas.                               | Imediato          |
+| XIII  | **A Morte**           | Três cartas aleatórias são devolvidas da mão ao fundo do baralho, marcando o fim de um ciclo.              | Imediato          |
+| XIV   | **A Temperança**      | Com equilíbrio, diminua sua pontuação em um valor entre 2 e 11 (**debuff**).                               | Imediato          |
+| XV    | **O Diabo**           | Ousada escolha: triplique sua aposta em vitória, pague o dobro em derrota, receba um **buff** ou **debuff** aleatório entre -10 e +20 pontos, ou devolva a carta ao fundo do baralho.                                                                                              | Imediato          |
+| XVI   | **A Torre**           | O caos se instala: a aposta é reduzida pela metade. Descarte uma carta e receba um **debuff** de 10 pontos.| Imediato          |
+| XVII  | **A Estrela**         | Sob a proteção das estrelas, ignore o estouro na próxima rodada. Se perder, pague apenas metade da aposta. | Passiva           |
+| XVIII | **A Lua**             | Sob o véu do mistério, repita o efeito do último Arcano Maior ativado. Se nenhum efeito anterior ocorreu, o destino decide: vitória ou derrota, guiados pela sorte.                                                                                                                 | Imediato          |
+| XIX   | **O Sol**             | Sob a luz do Sol, se o jogador ganhar, recebe 50% a mais; se perder, paga 50% a menos.                     | Imediato          |
+| XX    | **O Julgamento**      | No momento do julgamento, se o jogador perder, a partida é reiniciada, oferecendo uma nova chance.         | Imediato          |
+| XXI   | **O Mundo**           | Com a harmonia do universo, garante vitória automática.                                                    | Imediato          |
 
 ### Como Jogar
 1. O jogador realiza sua aposta.
 2. As cartas são embaralhadas.
 3. O jogador e o dealer recebem duas cartas cada.
 4. O jogador escolhe entre **Hit** (comprar uma carta) ou **Stand** (manter a mão atual).
-5. Se o jogador **estourar** (ultrapassar 50 pontos), sofre **derrota imediata**.
-6. Caso escolha **Stand**, o dealer comprará cartas até atingir, no mínimo, 40 pontos.
+5. Se o jogador **estourar** (ultrapassar 33 pontos), sofre **derrota imediata**.
+6. Caso escolha **Stand**, o dealer comprará cartas até atingir, no mínimo, 27 pontos.
 7. Se o dealer **estourar**, o jogador obtém **vitória imediata**.
-8. Caso contrário, a pontuação é comparada, e vence quem tiver mais pontos.
+8. Caso contrário, compara-se a pontuação, e vence quem tiver mais pontos.
+
+### Restrições
+1. Nenhuma das cartas distribuídas no início do jogo pode ser um Arcano Maior.
+2. O dealer não pode comprar Arcanos Maiores.
+3. Todas as cartas devolvidas devem ser retornadas ao fundo do baralho.
