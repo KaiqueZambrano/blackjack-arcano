@@ -2,6 +2,8 @@
 
 > Projeto desenvolvido para a disciplina **Comunicação Organizacional (EC46DB)**
 
+![Logo](assets/logo.png)
+
 ## Regras de Negócio
 
 ### Objetivo
@@ -28,7 +30,7 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 | X     | **A Roda da Fortuna** | O destino gira: triplique sua aposta em vitória, dobre-a em derrota ou sofra um **debuff** de 5 pontos.    | Imediato          |
 | XI    | **A Força**           | Com sua força interior, anule o efeito do próximo Arcano Maior ativado.                                    | Passiva           |
 | XII   | **O Enforcado**       | Em um sacrifício, toda a mão do jogador é substituída por duas novas cartas.                               | Imediato          |
-| XIII  | **A Morte**           | Três cartas aleatórias são devolvidas da mão ao fundo do baralho, marcando o fim de um ciclo.              | Imediato          |
+| XIII  | **A Morte**           | Devolva três cartas aleatórias da mão ao baralho, marcando o fim de um ciclo. Se não houver cartas suficientes, receba um **debuff** de 5 pontos.                                                                                                                                    | Imediato          |
 | XIV   | **A Temperança**      | Com equilíbrio, diminua sua pontuação em um valor entre 2 e 11 (**debuff**).                               | Imediato          |
 | XV    | **O Diabo**           | Ousada escolha: triplique sua aposta em vitória, pague o dobro em derrota, receba um **buff** ou **debuff** aleatório entre -10 e +20 pontos, ou devolva a carta ao fundo do baralho.                                                                                              | Imediato          |
 | XVI   | **A Torre**           | O caos se instala: a aposta é reduzida pela metade. Descarte uma carta e receba um **debuff** de 10 pontos.| Imediato          |

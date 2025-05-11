@@ -18,7 +18,6 @@ efeitos.lista["O Louco"] = function(entidade, baralho)
 
     if entidade.pontuacao <= 33 then
         print("[Efeito] Você saiu ileso... mas O Louco leva tudo. Você perdeu!")
-        entidade.ignorar_estouro = false
         entidade.estourou = true
     end
 end

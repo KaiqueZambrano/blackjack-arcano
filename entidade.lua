@@ -1,44 +1,40 @@
 local entidade = {}
-entidade.__index = entidade
-
 local efeitos = require("efeitos")
 
 function entidade:comprarCarta(baralho)
-    entidade.ignorar_estouro = false
+    self.ignorar_estouro = false
     local carta = baralho:puxar()
     table.insert(self.mao, carta)
     efeitos:aplicar(carta, self, baralho)
 end
 
 function entidade:comprarCartaSemArcanoMaior(baralho)
-    entidade.ignorar_estouro = false
+    self.ignorar_estouro = false
     local carta = baralho:puxarSemArcanoMaior()
     table.insert(self.mao, carta)
 end
 
 function entidade:calcularMao()
-    local valor_mao = 0
+    local valor = 0
     local ases = 0
 
     for _, carta in ipairs(self.mao) do
-        if carta:match("^[2-9]") then
-            valor_mao = valor_mao + tonumber(carta:match("([2-9])"))
-        elseif carta:match("10") then
-            valor_mao = valor_mao + 10 
-        elseif carta:match("Valete") or carta:match("Rainha") or carta:match("Rei") or carta:match("Cavaleiro") then
-            valor_mao = valor_mao + 10
+        if carta:match("^%d+") then
+            valor = valor + tonumber(carta:match("^%d+"))
         elseif carta:match("Ás") then
-            valor_mao = valor_mao + 11
+            valor = valor + 11
             ases = ases + 1
+        elseif carta:match("Valete") or carta:match("Rainha") or carta:match("Rei") or carta:match("Cavaleiro") then
+            valor = valor + 10
         end
     end
 
-    while valor_mao > 50 and ases > 0 do
-        valor_mao = valor_mao - 10
+    while valor > 50 and ases > 0 do
+        valor = valor - 10
         ases = ases - 1
     end
 
-    return valor_mao + self.buff - self.debuff
+    return valor + (self.buff or 0) - (self.debuff or 0)
 end
 
 function entidade:obterCartas(baralho)

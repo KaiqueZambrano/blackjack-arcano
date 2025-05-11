@@ -1,7 +1,7 @@
 local dealer = {}
 local entidade = require("entidade")
 
-setmetatable(dealer, entidade)
+setmetatable(dealer, { __index = entidade })
 
 dealer.mao = {}
 dealer.pontuacao = 0
@@ -16,6 +16,7 @@ function dealer:rodadaDoDealer(baralho)
 
         if self.pontuacao > 33 then
             self.estourou = true
+            break
         end
     end
 end

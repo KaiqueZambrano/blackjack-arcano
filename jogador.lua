@@ -1,7 +1,7 @@
 local jogador = {}
 local entidade = require("entidade")
 
-setmetatable(jogador, entidade)
+setmetatable(jogador, { __index = entidade })
 
 jogador.aposta = 0
 jogador.mao = {}
@@ -12,11 +12,11 @@ jogador.estourou = false
 jogador.parou = false
 
 function jogador:fazerAposta(valor)
-    self.aposta = valor 
+    self.aposta = valor
 end
 
 function jogador:dobrarAposta()
-    self.aposta = 2 * self.aposta
+    self.aposta = self.aposta * 2
 end
 
 function jogador:hit(baralho)
