@@ -49,7 +49,6 @@ Além da soma das cartas, combinações especiais concedem bônus adicionais de 
 | **Trinca**           | Três cartas do mesmo valor.                     | +3 pontos          |
 | **Sequência**        | Três cartas em sequência.                       | +2 pontos          |
 | **Cor**              | Três cartas do mesmo naipe.                     | +2 pontos          |
-| **Sequência de Cor** | Três cartas em sequência do mesmo naipe.        | +4 pontos          |
 
 ## Hierarquia para as combinações:
 
