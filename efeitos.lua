@@ -14,6 +14,8 @@ efeitos.lista["O Louco"] = function(entidade, baralho)
 
     entidade:comprarCartaSemArcanoMaior(baralho)
     entidade:comprarCartaSemArcanoMaior(baralho)
+    entidade:comprarCartaSemArcanoMaior(baralho)
+    entidade:calcularMao()
     entidade.ignorar_estouro = true
 
     if entidade.pontuacao <= 33 then

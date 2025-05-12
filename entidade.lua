@@ -47,6 +47,8 @@ function entidade:calcularMao()
 
             cartasPorNaipe[naipe] = cartasPorNaipe[naipe] or {}
             table.insert(cartasPorNaipe[naipe], rank_valores[rank] or tonumber(rank))
+        else
+            valor = valor + 1
         end
     end
 
