@@ -29,7 +29,7 @@ function entidade:calcularMao()
         end
     end
 
-    while valor > 50 and ases > 0 do
+    while valor > 33 and ases > 0 do
         valor = valor - 10
         ases = ases - 1
     end

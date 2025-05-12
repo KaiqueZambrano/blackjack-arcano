@@ -7,7 +7,7 @@
 ## Regras de Negócio
 
 ### Objetivo
-O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possível de 33 pontos, **sem ultrapassá-los** (isto é, sem **estourar**).
+Some o valor das cartas para chegar o mais próximo possível de 33 pontos, sem ultrapassar. Combinações concedem bônus únicos à pontuação final.
 
 ### Cartas
 - Cartas **numéricas** têm valor igual ao número que representam.
@@ -19,7 +19,7 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 | ----- | --------------------- | ---------------------------------------------------------------------------------------------------------- | ----------------- |
 | 0     | **O Louco**           | Compre duas cartas sem se preocupar com o estouro. Mas cuidado: se sair ileso, perde imediatamente.        | Imediato          |
 | I     | **O Mago**            | Canalize sua vontade: escolha um valor entre 2 e 11 para somar à sua pontuação (**buff**).                 | Imediato          |
-| II    | **A Sacerdotisa**     | Com um olhar além do véu, revele as próximas três carta do baralho.                                        | Imediato          |
+| II    | **A Sacerdotisa**     | Com um olhar além do véu, revele as próximas duas carta do baralho.                                        | Imediato          |
 | III   | **A Imperatriz**      | Dissipa todos os **debuffs** do jogador e ignora um possível estouro, como um gesto de graça.              | Imediato          |
 | IV    | **O Imperador**       | Uma vez por partida, imponha ordem: ignore o estouro e retorne a última carta comprada ao baralho.         | Passiva           |
 | V     | **O Hierofante**      | Com sabedoria ritual, escolha uma carta da sua mão e troque por uma nova.                                  | Imediato          |
@@ -43,28 +43,25 @@ O objetivo do jogo é somar o valor das cartas e chegar o mais próximo possíve
 ### Bônus por combinação
 Além da soma das cartas, combinações especiais concedem bônus adicionais de pontuação:
 
-| Combinação                   | Requisitos                                      | Bônus de Pontuação |
-| ---------------------------- | ----------------------------------------------- | ------------------ |
-| **Par (Dupla)**              | Duas cartas do mesmo valor                      | +1 pontos          |
-| **Dois Pares**               | Duas duplas de valores diferentes               | +2 pontos          |
-| **Trinca (Three of a Kind)** | Três cartas do mesmo valor                      | +3 pontos          |
-| **Sequência (Straight)**     | Três cartas em sequência                        | +2 pontos          |
-| **Flush (Naipe Igual)**      | Três ou mais cartas do mesmo naipe              | +2 pontos          |
-| **Full House**               | Uma trinca + uma dupla                          | +4 pontos          |
-| **Quadra (Four of a Kind)**  | Quatro cartas do mesmo valor                    | +5 pontos          |
-| **Straight Flush**           | Três ou mais cartas em sequência do mesmo naipe | +6 pontos          |
+| Combinação           | Requisitos                                      | Bônus de Pontuação |
+| -------------------- | ----------------------------------------------- | ------------------ |
+| **Par**              | Duas cartas do mesmo valor.                     | +1 pontos          |
+| **Trinca**           | Três cartas do mesmo valor.                     | +3 pontos          |
+| **Sequência**        | Três cartas em sequência.                       | +2 pontos          |
+| **Cor**              | Três cartas do mesmo naipe.                     | +2 pontos          |
+| **Sequência de Cor** | Três cartas em sequência do mesmo naipe.        | +4 pontos          |
 
 ## Hierarquia para as combinações:
 
 | Carta      | Valor ordinal (para combinações) |
 | ---------- | -------------------------------- |
-| Ás         | 1 ou 15                          |
-| 2–10       | 2 a 10                           |
-| Valete     | 11                               |
-| Cavaleiro  | 12                               |
-| Rainha     | 13                               |
-| Rei        | 14                               |
-| Ás         | 1 ou 15                          |
+| Ás         | 1.                               |
+| 2–10       | 2 a 10.                          |
+| Valete     | 11.                              |
+| Cavaleiro  | 12.                              |
+| Rainha     | 13.                              |
+| Rei        | 14.                              |
+| Ás         | 15.                              |
 
 ### Como Jogar
 1. O jogador realiza sua aposta.
@@ -82,4 +79,3 @@ Além da soma das cartas, combinações especiais concedem bônus adicionais de 
 2. O dealer não pode comprar Arcanos Maiores.
 3. As cartas compradas por arcanos maiores são sempre Arcanos Menores.
 4. Todas as cartas devolvidas devem ser retornadas ao fundo do baralho.
-5. As combinações de bônus não se acumulam. Apenas a combinação mais valiosa da mão é considerada para o bônus de pontuação.
