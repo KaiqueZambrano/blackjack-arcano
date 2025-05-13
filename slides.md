@@ -8,11 +8,10 @@
 
 ## Introdução
 
-- Jogo de cartas simples e estratégico, **inspirado no blackjack**.
-- Plataformas **Windows/Linux/Mac**.
-- Equilibrar **sorte** e **habilidade**.
-- Elementos do **blackjack** e do **pôquer**.
-- Cartas com **efeitos especiais**.
+- Jogo de cartas simples e estratégico:
+    - Inspirado no **blackjack** e no **pôquer**.
+    - Plataformas **Windows/Linux/Mac**.
+    - Cartas com **efeitos especiais**.
 
 ---
 
@@ -21,7 +20,7 @@
 - Somar o mais próximo possível de **33 pontos**.
 - Formar **combinações** para ganhar **bônus de pontuação**.
 - Ganhar **apostas**.
-- Usar os **efeitos especiais** das cartas a seu favor para influenciar o resultado da rodada.
+- Usar os **efeitos especiais** das cartas a seu favor.
 
 > A rodada termina quando:
 >
