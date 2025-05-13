@@ -147,3 +147,7 @@
 8. Caso contrário, as pontuações são comparadas e vence quem tiver a **maior pontuação**.
 
 > O dealer **não** pode comprar **Arcanos Maiores**.
+
+---
+
+Obrigado pela atenção!
