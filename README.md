@@ -109,7 +109,7 @@ multiplicadores ao valor apostado:
 4. O jogador escolhe entre as seguintes opções:
     - **Hit**: Comprar uma carta. 
     - **Spell**: Usar um Arcano Maior de ativação voluntária (a carta utilizada será devolvida ao baralho).
-    - **Drop**: Descartar uma carta (até cinco cartas por partida).
+    - **Drop**: Descartar uma carta (até cinco cartas por rodada).
     - **Stand**: Manter a mão atual.
     - **Bet**: Apostar em uma combinação de par, trinca, sequência, cor ou sequência de cor.
 5. Se o jogador **estourar** (ultrapassar 33 pontos), sofre **derrota imediata**.
