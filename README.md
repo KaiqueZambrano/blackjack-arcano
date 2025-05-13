@@ -16,6 +16,8 @@
 - Formar **combinações** para ganhar **bônus de pontuação** e aumentar o retorno da **aposta**.
 - Usar os **efeitos especiais** das cartas a seu favor para influenciar o resultado da rodada.
 
+> A rodada termina quando o jogador decide "parar" (**stand**) ou **estoura** (ultrapassa 33 pontos).
+
 ## Diferenças do blackjack tradicional
 - O objetivo é alcançar **33 pontos**, em vez de **21**.
 - **Combinações** (pares, trincas, sequências e cartas do mesmo naipe) também contribuem para a pontuação final.
@@ -109,12 +111,13 @@ multiplicadores ao valor apostado:
 2. As cartas são **embaralhadas**.
 3. O jogador e o dealer recebem **duas cartas** cada.
 4. O jogador escolhe entre as seguintes opções:
-    - **Hit**: Comprar uma carta 
-        (O jogador pode ter até cinco cartas na mão.) 
-    - **Drop**: Descartar uma carta
-        (O jogador pode descartar até cinco cartas por rodada.) 
-    - **Spell**: Usar um Arcano Maior de ativação voluntária
-        (A carta utilizada será devolvida ao baralho. É permitido usar no máximo três arcanos por rodada.)
+    - **Hit**: Comprar uma carta.
+        - O jogador pode ter até cinco cartas na mão. 
+    - **Drop**: Descartar uma carta.
+        - O jogador pode descartar até cinco cartas por rodada. 
+    - **Spell**: Usar um Arcano Maior de ativação voluntária.
+        - A carta utilizada será devolvida ao baralho. 
+        - É permitido usar no máximo três arcanos por rodada.
     - **Stand**: Manter a mão atual.
     - **Bet**: Apostar em uma combinação de par, trinca, sequência, cor ou sequência de cor.
 5. Se o jogador **estourar** (ultrapassar 33 pontos), sofrerá **derrota imediata**.
