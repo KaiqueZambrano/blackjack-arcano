@@ -6,7 +6,7 @@
 
 ## Metas dos desenvolvedores
 - Criar um jogo de cartas simples e estratégico, **inspirado no blackjack**.
-- Desenvolver o jogo para plataforma de computador (Windows/Linux/Mac).
+- Desenvolver o jogo para plataforma de Desktop (Windows/Linux/Mac).
 - Equilibrar sorte e habilidade, **recompensando boas decisões do jogador**.
 - Integrar um sistema de pontuação que mescla elementos do **blackjack** e do **pôquer**.
 - Introduzir cartas com **efeitos especiais** que trazem variedade e imprevisibilidade ao jogo.
@@ -49,28 +49,28 @@
 
 | Nº    | Arcano Maior          | Efeito Especial                                                                                                                                                     | Ativação   |
 | ----- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
-| 0     | **O Louco**           | Compre uma carta sem se preocupar com o estouro, mas cuidado: se sair ileso, a jornada termina aqui.                                                                | Voluntária |
-| I     | **O Mago**            | Canalize sua vontade: escolha um valor entre 2 e 5 para receber um **buff** na pontuação.                                                                           | Voluntária |
+| 0     | **O Louco**           | Compre uma carta sem se preocupar com o estouro, mas cuidado: se sair ileso, sua jornada termina aqui.                                                              | Voluntária |
+| I     | **O Mago**            | Canalize sua vontade: escolha um valor entre 1 e 5 para receber um **buff** na pontuação.                                                                           | Voluntária |
 | II    | **A Sacerdotisa**     | Com um olhar além do véu, revele as três cartas seguintes, vislumbrando o futuro.                                                                                   | Voluntária |
-| III   | **A Imperatriz**      | Dissipe os **debuffs** e ignore o estouro desta rodada como um gesto de graça.                                                                                      | Voluntária |
-| IV    | **O Imperador**       | Uma vez por partida, impose a ordem: ignore o estouro e devolva a última carta comprada ao baralho.                                                                 | Automática |
+| III   | **A Imperatriz**      | Dissipe os **debuffs** e ignore o estouro desta rodada, como um gesto de clemência.                                                                                 | Voluntária |
+| IV    | **O Imperador**       | Uma vez por partida, imponha ordem: ignore o estouro e descarte a última carta comprada.                                                                            | Automática |
 | V     | **O Hierofante**      | Com sabedoria ancestral, troque uma carta da sua mão por uma nova.                                                                                                  | Voluntária |
-| VI    | **Os Amantes**        | O destino coloca à sua frente duas opções: escolha uma carta para manter, a outra se perde.                                                                         | Voluntária |
-| VII   | **O Carro**           | Avance com determinação: compre uma carta e, se desejar, recuse-a para buscar uma nova.                                                                             | Voluntária |
-| VIII  | **A Justiça**         | A balança da equidade pesa: se a diferença entre sua pontuação e a do dealer for de até 3 pontos, a vitória é compartilhada.                                        | Automática |
-| IX    | **O Eremita**         | Em silêncio e meditação, devolva uma carta comprada ao baralho, refletindo sobre o que foi escolhido.                                                               | Voluntária |
-| X     | **A Roda da Fortuna** | O destino gira: dobre sua aposta em vitória, dobre-a em derrota ou sofra um **debuff** de 5 pontos.                                                                 | Automática |
-| XI    | **A Força**           | Com sua força interior, anule o efeito do próximo Arcano Maior ativado.                                                                                             | Voluntária |
-| XII   | **O Enforcado**       | Em um sacrifício, receba 3 pontos de **debuff** e substitua toda a sua mão por duas novas cartas.                                                                   | Voluntária |
-| XIII  | **A Morte**           | Devolva três cartas aleatórias da sua mão ao baralho, encerrando um ciclo. Se não houver cartas suficientes, receba um **debuff** de 5 pontos.                      | Voluntária |
-| XIV   | **A Temperança**      | Com moderação, escolha um valor entre 2 e 5 para receber um **debuff** na pontuação, equilibrando a balança do destino.                                             | Voluntária |
-| XV    | **O Diabo**           | Ousada escolha: dobre sua aposta em vitória, mas pague o triplo em derrota, ou receba um **buff** ou **debuff** aleatório entre -10 e +20 pontos.                   | Voluntária |
-| XVI   | **A Torre**           | O caos se instala: reduza sua aposta pela metade, descarte uma carta e receba um **debuff** de 10 pontos.                                                           | Automática |
+| VI    | **Os Amantes**        | O destino coloca à sua frente duas cartas: escolha uma para manter, a outra é descartada.                                                                           | Voluntária |
+| VII   | **O Carro**           | Avance com determinação: compre uma carta e, se desejar, descarte-a.                                                                                                | Voluntária |
+| VIII  | **A Justiça**         | A balança da equidade julga: se a diferença entre sua pontuação e a do dealer for de até 3 pontos, a vitória é compartilhada.                                       | Automática |
+| IX    | **O Eremita**         | Em silêncio e meditação, recupere uma carta descartada, refletindo sobre o que foi escolhido.                                                                       | Voluntária |
+| X     | **A Roda da Fortuna** | O destino gira: dobre sua aposta em vitória, dobre-a em derrota, ou então sofra um **debuff** de 5 pontos.                                                          | Automática |
+| XI    | **A Força**           | Com sua força interior, escolha anular o efeito do próximo Arcano Maior ativado.                                                                                    | Voluntária |
+| XII   | **O Enforcado**       | Em um sacrifício, descarte todas as suas cartas e receba 3 pontos de **debuff**.                                                                                    | Voluntária |
+| XIII  | **A Morte**           | Descarte três cartas da sua mão ao baralho, encerrando um ciclo. Se não houver cartas suficientes, receba um **debuff** de 5 pontos.                                | Voluntária |
+| XIV   | **A Temperança**      | Com moderação, escolha um valor entre 1 e 5 para receber um **debuff** na pontuação, equilibrando a balança do destino.                                             | Voluntária |
+| XV    | **O Diabo**           | Ousada escolha: dobre sua aposta em vitória, mas pague o triplo em derrota, ou receba um **buff**/**debuff** aleatório entre -10 e +20 pontos.                      | Voluntária |
+| XVI   | **A Torre**           | O caos se instala: reduza sua aposta pela metade, descarte três cartas aleatórias. Se não houver cartas suficientes, receba um **debuff** de 10 pontos.             | Automática |
 | XVII  | **A Estrela**         | Sob a proteção das estrelas, ignore o estouro na próxima rodada. Se perder, pague apenas metade da aposta.                                                          | Automática |
 | XVIII | **A Lua**             | Sob o véu do mistério, repita o efeito do último Arcano Maior ativado. Se nenhum efeito anterior ocorreu, o destino decide: vitória ou derrota, guiados pela sorte. | Automática |
 | XIX   | **O Sol**             | Sob a luz do Sol, se você vencer, receberá 50% a mais; se perder, pagará 50% a menos.                                                                               | Automática |
-| XX    | **O Julgamento**      | No momento do julgamento, se você perder, a partida será reiniciada, oferecendo uma nova chance.                                                                    | Automática |
-| XXI   | **O Mundo**           | Com a harmonia do universo, garante vitória automática se a pontuação for maior ou igual a 27.                                                                      | Automática |
+| XX    | **O Julgamento**      | No momento do julgamento, uma derrota reinicia a partida, oferecendo uma nova chance.                                                                               | Automática |
+| XXI   | **O Mundo**           | Com a harmonia do universo, concede vitória imediata caso sua pontuação seja maior ou igual a 27.                                                                   | Automática |
 
 > **Buffs** são aumentos na pontuação, enquanto **debuffs** representam reduções.
 

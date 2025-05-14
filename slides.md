@@ -10,8 +10,8 @@
 
 - Jogo de cartas simples e estratégico:
     - Inspirado no **blackjack** e no **pôquer**.
-    - Plataformas **Windows/Linux/Mac**.
     - Cartas com **efeitos especiais**.
+    - Desktop (**Windows/Linux/Mac**).
 
 ---
 
