@@ -2,10 +2,18 @@ package com.kaique.blackjackarcano;
 
 public class JogoForm extends javax.swing.JFrame {
 
-    public JogoForm() {
+    public JogoForm(int aposta) {
         initComponents();
-        Baralho baralho = new Baralho();
-
+        var baralho = new Baralho();
+        
+        var jogador = new Jogador(baralho, aposta);
+        var dealer = new Dealer(baralho);
+        
+        jogador.adicionarNaMao(baralho);
+        jogador.adicionarNaMao(baralho);
+        
+        dealer.adicionarNaMao(baralho);
+        dealer.adicionarNaMao(baralho);
     }
 
     @SuppressWarnings("unchecked")
@@ -143,14 +151,6 @@ public class JogoForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JogoForm().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cartaCincoLabel;
