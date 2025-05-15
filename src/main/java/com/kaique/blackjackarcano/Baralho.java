@@ -13,13 +13,13 @@ public class Baralho {
         cartas = new Stack<>();
         descartes = new Stack<>();
 
-        for (String naipe : Carta.NAIPES) {
+        for (var naipe : Carta.NAIPES) {
             for (String valor : Carta.VALORES) {
                 cartas.push(new Carta(naipe, valor));
             }
         }
 
-        for (String arcano : Carta.ARCANOS_MAIORES) {
+        for (var arcano : Carta.ARCANOS_MAIORES) {
             cartas.push(new Carta(null, arcano));
         }
 

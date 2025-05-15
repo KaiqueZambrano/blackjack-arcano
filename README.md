@@ -20,7 +20,7 @@
 
 ## Diferenças do blackjack tradicional
 - O objetivo é alcançar **33 pontos**, em vez de **21**.
-- **Combinações** (pares, trincas, sequências e cartas do mesmo naipe) também contribuem para a pontuação final.
+- **Combinações** (pares, trincas, quadras, sequências e cartas do mesmo naipe) também contribuem para a pontuação final.
 - É possível **apostar em uma combinação** a qualquer momento (desde que antes de obtê-la), assim como **devolver um número limitado de cartas**.
 - A opção de **"Seguro"** não está disponível para o jogador.
 - O jogador poderá manter, no máximo, cinco cartas em sua mão.
@@ -78,13 +78,15 @@
 Além da soma das cartas, certas **combinações** garantem **bônus adicionais de pontuação**. Quando utilizadas em apostas, essas combinações também aplicam 
 multiplicadores ao valor apostado:
 
-| Combinação           | Requisitos                                      | Bônus de Pontuação | Multiplicador (em aposta) |
-| -------------------- | ----------------------------------------------- | ------------------ | ------------------------- |
-| **Par**              | Duas cartas do mesmo valor.                     | +1 pontos          | x1.25                     |
-| **Trinca**           | Três cartas do mesmo valor.                     | +3 pontos          | x3                        |
-| **Sequência**        | Três cartas em sequência.                       | +2 pontos          | x1.5                      |
-| **Cor**              | Três cartas do mesmo naipe.                     | +2 pontos          | x1.5                      |
-| **Sequência de Cor** | Três cartas em sequência do mesmo naipe.        | +4 pontos          | x4                        |
+| Combinação           | Requisitos                                             | Bônus de Pontuação | Multiplicador (em aposta) |
+| -------------------- | ------------------------------------------------------ | ------------------ | ------------------------- |
+| **Par**              | Duas cartas do mesmo valor.                            | +1 pontos          | x1.25                     |
+| **Dois Pares**       | Dois pares distintos de cartas com valores diferentes. | +2 pontos          | x1.5                      |
+| **Sequência**        | Três cartas em sequência.                              | +2 pontos          | x1.5                      |
+| **Cor**              | Três cartas do mesmo naipe.                            | +2 pontos          | x1.5                      |
+| **Trinca**           | Três cartas do mesmo valor.                            | +3 pontos          | x3                        |
+| **Quadra**           | Quatro cartas do mesmo valor.                          | +3 pontos          | x4                        |
+| **Sequência de Cor** | Três cartas em sequência do mesmo naipe.               | +4 pontos          | x5                        |
 
 ### Hierarquia para as combinações:
 

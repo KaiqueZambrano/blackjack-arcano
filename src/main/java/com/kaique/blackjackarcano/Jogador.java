@@ -1,6 +1,5 @@
 package com.kaique.blackjackarcano;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class Jogador extends Entidade {
@@ -18,73 +17,27 @@ public class Jogador extends Entidade {
         parou = false;
     }
 
-    private boolean detectarCombinacao(String combinacao) {
-        Map<String, Integer> quantidadeDeCartas = new HashMap<>();
-        Map<String, Integer> quantidadeDeNaipes = new HashMap<>();
-        
-        for (Carta carta : mao) {
-            if (carta.getNaipe() != null) {
-                String valor = carta.getValor();
-                String naipe = carta.getNaipe();
-                
-                quantidadeDeCartas.put(valor, quantidadeDeCartas.getOrDefault(valor, 0) + 1);
-                quantidadeDeNaipes.put(naipe, quantidadeDeNaipes.getOrDefault(naipe, 0) + 1);
-            }
-        }
-        
-        boolean temPar = false;
-        boolean temDoisPares = false;
-        boolean temTrinca = false;
-        boolean temSequencia = false;
-        boolean temCor = false;
-        boolean temSequenciaDeCor = false;
-
-        switch (combinacao) {
-            case "Par" -> {
-                return temPar;
-            }
-            case "Dois Pares" -> {
-                return temDoisPares;
-            }
-            case "Trinca" -> {
-                return temTrinca;
-            }
-            case "Sequência" -> {
-                return temSequencia;
-            }
-            case "Cor" -> {
-                return temCor;
-            }
-            case "Sequência de Cor" -> {
-                return temSequenciaDeCor;
-            }
-            default -> {
-                return false;
-            }
-        }
-    }
-
     @Override
     public void calcularMao() {
         int valorTotal = buff - debuff;
         int qtdDeAses = 0;
 
-        Map<String, Integer> valorPorCarta = new HashMap<>();
-
-        valorPorCarta.put("2", 2);
-        valorPorCarta.put("3", 3);
-        valorPorCarta.put("4", 4);
-        valorPorCarta.put("5", 5);
-        valorPorCarta.put("6", 6);
-        valorPorCarta.put("7", 7);
-        valorPorCarta.put("8", 8);
-        valorPorCarta.put("9", 9);
-        valorPorCarta.put("10", 10);
-        valorPorCarta.put("Valete", 10);
-        valorPorCarta.put("Cavaleiro", 10);
-        valorPorCarta.put("Rainha", 10);
-        valorPorCarta.put("Rei", 10);
-        valorPorCarta.put("Ás", 11);
+        Map<String, Integer> valorPorCarta = Map.ofEntries(
+                Map.entry("2", 2),
+                Map.entry("3", 3),
+                Map.entry("4", 4),
+                Map.entry("5", 5),
+                Map.entry("6", 6),
+                Map.entry("7", 7),
+                Map.entry("8", 8),
+                Map.entry("9", 9),
+                Map.entry("10", 10),
+                Map.entry("Valete", 10),
+                Map.entry("Cavaleiro", 10),
+                Map.entry("Rainha", 10),
+                Map.entry("Rei", 10),
+                Map.entry("Ás", 11)
+        );
 
         for (Carta carta : mao) {
             if (carta.getValor().equals("Ás")) {
