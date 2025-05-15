@@ -2,7 +2,7 @@ package com.kaique.blackjackarcano;
 
 import java.util.Map;
 
-public class Jogador extends Entidade {
+public final class Jogador extends Entidade {
 
     private int aposta;
     private int buff;
@@ -19,7 +19,7 @@ public class Jogador extends Entidade {
 
     @Override
     public void calcularMao() {
-        int valorTotal = buff - debuff;
+        pontuacao = buff - debuff;
         int qtdDeAses = 0;
 
         Map<String, Integer> valorPorCarta = Map.ofEntries(
@@ -45,32 +45,28 @@ public class Jogador extends Entidade {
             }
 
             if (carta.getNaipe() != null) {
-                valorTotal += valorPorCarta.get(carta.getValor());
+                pontuacao += valorPorCarta.get(carta.getValor());
             }
         }
+        
+        if (detectarCombinacao("Trinca")) 
+            pontuacao += 3;
+        else if (detectarCombinacao("Dois Pares"))
+            pontuacao += 2;
+        else if (detectarCombinacao("Par"))
+            pontuacao += 1;
 
-        if (detectarCombinacao("Trinca")) {
-            valorTotal += 3;
-        } else if (detectarCombinacao("Dois Pares")) {
-            valorTotal += 2;
-        } else if (detectarCombinacao("Par")) {
-            valorTotal += 1;
-        }
-
-        if (detectarCombinacao("Sequência de Cor")) {
-            valorTotal += 4;
-        } else if (detectarCombinacao("Sequência")) {
-            valorTotal += 2;
-        } else if (detectarCombinacao("Cor")) {
-            valorTotal += 2;
-        }
-
-        while (valorTotal > Entidade.PONTUACAO_MAXIMA && qtdDeAses > 0) {
-            valorTotal -= 10;
+        if (detectarCombinacao("Sequência de Cor"))
+            pontuacao += 4;
+        else if (detectarCombinacao("Sequência"))
+            pontuacao += 2;
+        else if (detectarCombinacao("Cor"))
+            pontuacao += 2;
+        
+        while (pontuacao > Entidade.PONTUACAO_MAXIMA && qtdDeAses > 0) {
+            pontuacao -= 10;
             qtdDeAses -= 1;
         }
-
-        pontuacao = valorTotal;
     }
 
     public int getAposta() {

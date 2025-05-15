@@ -4,7 +4,7 @@ import java.util.Stack;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class Baralho {
+public final class Baralho {
 
     private final Stack<Carta> cartas;
     private final Stack<Carta> descartes;
@@ -25,7 +25,7 @@ public class Baralho {
 
         Collections.shuffle(cartas);
     }
-
+    
     public Carta comprarCarta() {
         if (cartas.isEmpty()) {
             return null;

@@ -1,6 +1,6 @@
 package com.kaique.blackjackarcano;
 
-public class Carta {
+public final class Carta {
 
     public static final String[] NAIPES = {"Espadas", "Paus", "Copas", "Ouros"};
     public static final String[] VALORES = {

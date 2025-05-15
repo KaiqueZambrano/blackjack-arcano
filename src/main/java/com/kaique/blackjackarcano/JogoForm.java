@@ -1,19 +1,69 @@
 package com.kaique.blackjackarcano;
 
-public class JogoForm extends javax.swing.JFrame {
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.util.List;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+public final class JogoForm extends javax.swing.JFrame {
+
+    private final List<JLabel> cartaLabels = new ArrayList<>();
+    private final List<JLabel> descCartaLabels = new ArrayList<>();
+    private int cartasNaMao = 0;
 
     public JogoForm(int aposta) {
         initComponents();
+
+        cartaLabels.add(cartaUmLabel);
+        cartaLabels.add(cartaDoisLabel);
+        cartaLabels.add(cartaTresLabel);
+        cartaLabels.add(cartaQuatroLabel);
+        cartaLabels.add(cartaCincoLabel);
+
+        descCartaLabels.add(descCartaUmLabel);
+        descCartaLabels.add(descCartaDoisLabel);
+        descCartaLabels.add(descCartaTresLabel);
+        descCartaLabels.add(descCartaQuatroLabel);
+        descCartaLabels.add(descCartaCincoLabel);
+
         var baralho = new Baralho();
-        
+        var gerenciador = new GerenciadorDeImagens();
+
         var jogador = new Jogador(baralho, aposta);
         var dealer = new Dealer(baralho);
-        
-        jogador.adicionarNaMao(baralho);
-        jogador.adicionarNaMao(baralho);
+
+        Carta c1 = jogador.adicionarNaMao(baralho);
+        mostrarCartaNaMao(gerenciador, c1);
+
+        Carta c2 = jogador.adicionarNaMao(baralho);
+        mostrarCartaNaMao(gerenciador, c2);
         
         dealer.adicionarNaMao(baralho);
         dealer.adicionarNaMao(baralho);
+        
+        dealer.calcularMao();
+        jogador.calcularMao();
+        
+        pontuacaoLabel.setText("Pontuação: " + Integer.toString(jogador.getPontuacao()));
+    }
+
+    public void mostrarCartaNaMao(GerenciadorDeImagens gerenciador, Carta carta) {
+        var labelCarta = cartaLabels.get(cartasNaMao);
+        var labelDesc = descCartaLabels.get(cartasNaMao);
+
+        var imagemOriginal = (BufferedImage) gerenciador.getImagemDaCarta(carta);
+
+        int largura = labelCarta.getWidth();
+        int altura = labelCarta.getHeight();
+
+        Image imagemRedimensionada = imagemOriginal.getScaledInstance(largura, altura, Image.SCALE_SMOOTH);
+
+        labelCarta.setIcon(new ImageIcon(imagemRedimensionada));
+        labelDesc.setText(carta.toString());
+
+        cartasNaMao++;
     }
 
     @SuppressWarnings("unchecked")
@@ -41,7 +91,7 @@ public class JogoForm extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setName("jogoFrame"); // NOI18N
         setResizable(false);
-        setSize(new java.awt.Dimension(882, 451));
+        setSize(new java.awt.Dimension(882, 440));
 
         hitBtn.setText("HIT");
 
@@ -119,15 +169,15 @@ public class JogoForm extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(34, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addContainerGap(36, Short.MAX_VALUE)
+                .addComponent(pontuacaoLabel)
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(pontuacaoLabel)
-                        .addGap(45, 45, 45)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(descCartaUmLabel)
-                            .addComponent(descCartaDoisLabel)
-                            .addComponent(descCartaTresLabel))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(descCartaDoisLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(descCartaTresLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(descCartaUmLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(cartaDoisLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -135,18 +185,20 @@ public class JogoForm extends javax.swing.JFrame {
                             .addComponent(cartaTresLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(cartaQuatroLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(descCartaCincoLabel)
-                            .addComponent(descCartaQuatroLabel))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(descCartaQuatroLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(descCartaCincoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(cartaCincoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
+                .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(hitBtn)
                     .addComponent(dropBtn)
                     .addComponent(spellBtn)
                     .addComponent(standBtn))
-                .addGap(24, 24, 24))
+                .addGap(36, 36, 36))
         );
 
         pack();

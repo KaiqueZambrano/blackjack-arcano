@@ -2,7 +2,7 @@ package com.kaique.blackjackarcano;
 
 import java.util.Map;
 
-public class Dealer extends Entidade {
+public final class Dealer extends Entidade {
 
     public Dealer(Baralho baralho) {
         super(baralho);
@@ -10,7 +10,6 @@ public class Dealer extends Entidade {
 
     @Override
     public void calcularMao() {
-        int valorTotal = 0;
         int qtdDeAses = 0;
 
         Map<String, Integer> valorPorCarta = Map.ofEntries(
@@ -36,31 +35,28 @@ public class Dealer extends Entidade {
             }
 
             if (carta.getNaipe() != null) {
-                valorTotal += valorPorCarta.get(carta.getValor());
+                pontuacao += valorPorCarta.get(carta.getValor());
             }
         }
 
         if (detectarCombinacao("Trinca")) {
-            valorTotal += 3;
+            pontuacao += 3;
         } else if (detectarCombinacao("Dois Pares")) {
-            valorTotal += 2;
+            pontuacao += 2;
         } else if (detectarCombinacao("Par")) {
-            valorTotal += 1;
+            pontuacao += 1;
         }
 
-        if (detectarCombinacao("Sequência de Cor")) {
-            valorTotal += 4;
-        } else if (detectarCombinacao("Sequência")) {
-            valorTotal += 2;
-        } else if (detectarCombinacao("Cor")) {
-            valorTotal += 2;
-        }
+        if (detectarCombinacao("Sequência de Cor"))
+            pontuacao += 4;
+        else if (detectarCombinacao("Sequência"))
+            pontuacao += 2;
+        else if (detectarCombinacao("Cor"))
+            pontuacao += 2;
 
-        while (valorTotal > Entidade.PONTUACAO_MAXIMA && qtdDeAses > 0) {
-            valorTotal -= 10;
+        while (pontuacao > Entidade.PONTUACAO_MAXIMA && qtdDeAses > 0) {
+            pontuacao -= 10;
             qtdDeAses -= 1;
         }
-
-        pontuacao = valorTotal;
     }
 }

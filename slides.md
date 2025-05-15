@@ -2,7 +2,7 @@
 
 > Projeto desenvolvido para a disciplina **Comunicação Organizacional**.
 
-![Logo](assets/logo.png)
+![Logo](logo.png)
 
 ---
 

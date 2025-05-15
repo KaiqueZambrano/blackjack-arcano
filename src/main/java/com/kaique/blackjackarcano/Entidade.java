@@ -16,20 +16,16 @@ public abstract class Entidade {
 
     public Entidade(Baralho baralho) {
         mao = new ArrayList<>();
-
-        Carta carta1 = baralho.comprarCarta();
-        Carta carta2 = baralho.comprarCarta();
-
-        mao.add(carta1);
-        mao.add(carta2);
-
         pontuacao = 0;
         estourou = false;
     }
 
-    public void adicionarNaMao(Baralho baralho) {
+    public Carta adicionarNaMao(Baralho baralho) {
         Carta carta = baralho.comprarCarta();
         mao.add(carta);
+        calcularMao();
+        
+        return carta;
     }
 
     protected boolean detectarCombinacao(String combinacao) {
