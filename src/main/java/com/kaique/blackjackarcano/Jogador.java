@@ -18,6 +18,15 @@ public final class Jogador extends Entidade {
     }
 
     @Override
+    public Carta adicionarNaMao(Baralho baralho) {
+        Carta carta = baralho.comprarCarta();
+        mao.add(carta);
+        calcularMao();
+        
+        return carta;
+    }
+    
+    @Override
     public void calcularMao() {
         pontuacao = buff - debuff;
         int qtdDeAses = 0;

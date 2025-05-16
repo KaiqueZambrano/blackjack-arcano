@@ -263,7 +263,10 @@ public final class JogoForm extends javax.swing.JFrame {
     }//GEN-LAST:event_hitBtnActionPerformed
 
     private void standBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standBtnActionPerformed
-        while (dealer.getPontuacao() < BlackjackArcano.PONTUACAO_QUE_O_DEALER_PARA) {
+        while ((dealer.getPontuacao() < jogador.getPontuacao()) 
+                && (dealer.getMao().size() < 5) 
+                && (dealer.getPontuacao() + 6 <= BlackjackArcano.PONTUACAO_MAXIMA)) 
+        {
             dealer.adicionarNaMao(baralho);
             atualizarPontuacao();
         }

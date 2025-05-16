@@ -128,3 +128,8 @@ multiplicadores ao valor apostado:
 8. Caso contrário, as pontuações são comparadas e vence quem tiver a **maior pontuação**.
 
 > O dealer não pode comprar Arcanos Maiores.
+
+## ToDo
+- Eliminar limite de pontuação fixo
+- Implementar uma tabela determinística para a decisão do dealer
+- Garantir que os efeitos especiais não desequilibram o jogo

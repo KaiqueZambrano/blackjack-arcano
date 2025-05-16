@@ -7,6 +7,19 @@ public final class Dealer extends Entidade {
     public Dealer(Baralho baralho) {
         super(baralho);
     }
+    
+    @Override
+    public Carta adicionarNaMao(Baralho baralho) {
+        Carta carta = baralho.comprarCarta();
+        
+        if (carta.getNaipe() == null)
+            return adicionarNaMao(baralho);
+        
+        mao.add(carta);
+        calcularMao();
+        
+        return carta;
+    }
 
     @Override
     public void calcularMao() {

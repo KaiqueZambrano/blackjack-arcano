@@ -18,14 +18,6 @@ public abstract class Entidade {
         estourou = false;
     }
 
-    public Carta adicionarNaMao(Baralho baralho) {
-        Carta carta = baralho.comprarCarta();
-        mao.add(carta);
-        calcularMao();
-        
-        return carta;
-    }
-
     protected boolean detectarCombinacao(String combinacao) {
         List<String> ordemDasCartas = Arrays.asList(
                 "Ás", "2", "3", "4", "5", "6", "7", "8", "9", "10",
@@ -153,6 +145,8 @@ public abstract class Entidade {
             }
         }
     }
+    
+    public abstract Carta adicionarNaMao(Baralho baralho);
     
     public abstract void calcularMao();
 
