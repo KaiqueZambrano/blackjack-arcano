@@ -73,21 +73,29 @@ public final class JogoForm extends javax.swing.JFrame {
         labelCarta.setIcon(new ImageIcon(imagemRedimensionada));
         labelDesc.setText(carta.toString());
     }
-    
+
     private void mostrarDialog(JFrame parent, String message, String title) {
         Object[] options = {"OK"};
         JOptionPane optionPane = new JOptionPane(
-            message,
-            JOptionPane.INFORMATION_MESSAGE,
-            JOptionPane.DEFAULT_OPTION,
-            null,
-            options,
-            options[0]
+                message,
+                JOptionPane.INFORMATION_MESSAGE,
+                JOptionPane.DEFAULT_OPTION,
+                null,
+                options,
+                options[0]
         );
 
         JDialog dialog = optionPane.createDialog(parent, title);
         dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
         dialog.setVisible(true);
+    }
+
+    private String obterCartasDoDealerComoTexto() {
+        StringBuilder sb = new StringBuilder("Cartas do dealer:\n");
+        for (Carta carta : dealer.getMao()) {
+            sb.append("- ").append(carta.toString()).append("\n");
+        }
+        return sb.toString();
     }
 
     @SuppressWarnings("unchecked")
@@ -247,7 +255,7 @@ public final class JogoForm extends javax.swing.JFrame {
         var carta = jogador.adicionarNaMao(baralho);
         mostrarCartaNaMao(carta);
         atualizarPontuacao();
-        
+
         if (jogador.getPontuacao() > BlackjackArcano.PONTUACAO_MAXIMA) {
             mostrarDialog(this, "Jogador estourou!", "Estouro");
             System.exit(0);
@@ -259,24 +267,25 @@ public final class JogoForm extends javax.swing.JFrame {
             dealer.adicionarNaMao(baralho);
             atualizarPontuacao();
         }
-        
+
         if (dealer.getPontuacao() > BlackjackArcano.PONTUACAO_MAXIMA) {
             mostrarDialog(this, "Dealer estourou!", "Estouro");
             System.exit(0);
         }
-        
-        if (jogador.getPontuacao() >  dealer.getPontuacao()) {
-            mostrarDialog(this, "Você ganhou!", "Vitória");
+
+        if (jogador.getPontuacao() > dealer.getPontuacao()) {
+            String cartasDealer = obterCartasDoDealerComoTexto();
+            mostrarDialog(this, "Você venceu!\n\n" + cartasDealer, "Vitória");
             System.exit(0);
         }
-        
-        if (jogador.getPontuacao() <  dealer.getPontuacao()) {
-            mostrarDialog(this, "Você perdeu!", "Derrota");
+        else if (jogador.getPontuacao() < dealer.getPontuacao()) {
+            String cartasDealer = obterCartasDoDealerComoTexto();
+            mostrarDialog(this, "Você perdeu!\n\n" + cartasDealer, "Derrota");
             System.exit(0);
         }
-        
-        if (jogador.getPontuacao() ==  dealer.getPontuacao()) {
-            mostrarDialog(this, "Empate!", "Empate");
+        else {
+            String cartasDealer = obterCartasDoDealerComoTexto();
+            mostrarDialog(this, "Empate!\n\n" + cartasDealer, "Empate");
             System.exit(0);
         }
     }//GEN-LAST:event_standBtnActionPerformed

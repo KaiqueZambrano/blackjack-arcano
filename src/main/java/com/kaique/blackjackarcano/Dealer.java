@@ -10,6 +10,7 @@ public final class Dealer extends Entidade {
 
     @Override
     public void calcularMao() {
+        pontuacao = 0;
         int qtdDeAses = 0;
 
         Map<String, Integer> valorPorCarta = Map.ofEntries(
