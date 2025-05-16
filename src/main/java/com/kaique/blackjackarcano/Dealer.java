@@ -3,7 +3,7 @@ package com.kaique.blackjackarcano;
 import java.util.Map;
 
 public final class Dealer extends Entidade {
-
+    
     public Dealer(Baralho baralho) {
         super(baralho);
     }
@@ -54,7 +54,7 @@ public final class Dealer extends Entidade {
         else if (detectarCombinacao("Cor"))
             pontuacao += 2;
 
-        while (pontuacao > Entidade.PONTUACAO_MAXIMA && qtdDeAses > 0) {
+        while (pontuacao > BlackjackArcano.PONTUACAO_MAXIMA && qtdDeAses > 0) {
             pontuacao -= 10;
             qtdDeAses -= 1;
         }

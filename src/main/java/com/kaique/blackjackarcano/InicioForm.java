@@ -1,6 +1,6 @@
 package com.kaique.blackjackarcano;
 
-public class InicioForm extends javax.swing.JFrame {
+public final class InicioForm extends javax.swing.JFrame {
 
     public InicioForm() {
         initComponents();

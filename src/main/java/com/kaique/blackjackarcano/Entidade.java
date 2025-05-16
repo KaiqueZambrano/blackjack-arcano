@@ -8,8 +8,6 @@ import java.util.Map;
 
 public abstract class Entidade {
 
-    public final static int PONTUACAO_MAXIMA = 33;
-
     protected final ArrayList<Carta> mao;
     protected int pontuacao;
     protected boolean estourou;

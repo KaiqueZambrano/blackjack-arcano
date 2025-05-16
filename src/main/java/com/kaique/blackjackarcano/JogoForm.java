@@ -5,13 +5,20 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 public final class JogoForm extends javax.swing.JFrame {
 
     private final List<JLabel> cartaLabels = new ArrayList<>();
     private final List<JLabel> descCartaLabels = new ArrayList<>();
-    private int cartasNaMao = 0;
+
+    private final Baralho baralho;
+    private final GerenciadorDeImagens gerenciador;
+    private final Dealer dealer;
+    private final Jogador jogador;
 
     public JogoForm(int aposta) {
         initComponents();
@@ -28,30 +35,33 @@ public final class JogoForm extends javax.swing.JFrame {
         descCartaLabels.add(descCartaQuatroLabel);
         descCartaLabels.add(descCartaCincoLabel);
 
-        var baralho = new Baralho();
-        var gerenciador = new GerenciadorDeImagens();
+        baralho = new Baralho();
+        gerenciador = new GerenciadorDeImagens();
 
-        var jogador = new Jogador(baralho, aposta);
-        var dealer = new Dealer(baralho);
+        jogador = new Jogador(baralho, aposta);
+        dealer = new Dealer(baralho);
 
         Carta c1 = jogador.adicionarNaMao(baralho);
-        mostrarCartaNaMao(gerenciador, c1);
+        mostrarCartaNaMao(c1);
 
         Carta c2 = jogador.adicionarNaMao(baralho);
-        mostrarCartaNaMao(gerenciador, c2);
-        
+        mostrarCartaNaMao(c2);
+
         dealer.adicionarNaMao(baralho);
         dealer.adicionarNaMao(baralho);
-        
+
+        atualizarPontuacao();
+    }
+
+    private void atualizarPontuacao() {
         dealer.calcularMao();
         jogador.calcularMao();
-        
         pontuacaoLabel.setText("Pontuação: " + Integer.toString(jogador.getPontuacao()));
     }
 
-    public void mostrarCartaNaMao(GerenciadorDeImagens gerenciador, Carta carta) {
-        var labelCarta = cartaLabels.get(cartasNaMao);
-        var labelDesc = descCartaLabels.get(cartasNaMao);
+    private void mostrarCartaNaMao(Carta carta) {
+        var labelCarta = cartaLabels.get(jogador.getMao().size() - 1);
+        var labelDesc = descCartaLabels.get(jogador.getMao().size() - 1);
 
         var imagemOriginal = (BufferedImage) gerenciador.getImagemDaCarta(carta);
 
@@ -62,8 +72,22 @@ public final class JogoForm extends javax.swing.JFrame {
 
         labelCarta.setIcon(new ImageIcon(imagemRedimensionada));
         labelDesc.setText(carta.toString());
+    }
+    
+    private void mostrarDialog(JFrame parent, String message, String title) {
+        Object[] options = {"OK"};
+        JOptionPane optionPane = new JOptionPane(
+            message,
+            JOptionPane.INFORMATION_MESSAGE,
+            JOptionPane.DEFAULT_OPTION,
+            null,
+            options,
+            options[0]
+        );
 
-        cartasNaMao++;
+        JDialog dialog = optionPane.createDialog(parent, title);
+        dialog.setDefaultCloseOperation(JDialog.DO_NOTHING_ON_CLOSE);
+        dialog.setVisible(true);
     }
 
     @SuppressWarnings("unchecked")
@@ -94,12 +118,22 @@ public final class JogoForm extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(882, 440));
 
         hitBtn.setText("HIT");
+        hitBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hitBtnActionPerformed(evt);
+            }
+        });
 
         dropBtn.setText("DROP");
 
         spellBtn.setText("SPELL");
 
         standBtn.setText("STAND");
+        standBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                standBtnActionPerformed(evt);
+            }
+        });
 
         pontuacaoLabel.setFont(new java.awt.Font("DejaVu Sans", 0, 24)); // NOI18N
         pontuacaoLabel.setText("Pontuação: 0");
@@ -203,6 +237,49 @@ public final class JogoForm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void hitBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hitBtnActionPerformed
+        if (jogador.getMao().size() == 5) {
+            JOptionPane.showMessageDialog(null, "Não pode comprar mais de cinco cartas!");
+            return;
+        }
+
+        var carta = jogador.adicionarNaMao(baralho);
+        mostrarCartaNaMao(carta);
+        atualizarPontuacao();
+        
+        if (jogador.getPontuacao() > BlackjackArcano.PONTUACAO_MAXIMA) {
+            mostrarDialog(this, "Jogador estourou!", "Estouro");
+            System.exit(0);
+        }
+    }//GEN-LAST:event_hitBtnActionPerformed
+
+    private void standBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_standBtnActionPerformed
+        while (dealer.getPontuacao() < BlackjackArcano.PONTUACAO_QUE_O_DEALER_PARA) {
+            dealer.adicionarNaMao(baralho);
+            atualizarPontuacao();
+        }
+        
+        if (dealer.getPontuacao() > BlackjackArcano.PONTUACAO_MAXIMA) {
+            mostrarDialog(this, "Dealer estourou!", "Estouro");
+            System.exit(0);
+        }
+        
+        if (jogador.getPontuacao() >  dealer.getPontuacao()) {
+            mostrarDialog(this, "Você ganhou!", "Vitória");
+            System.exit(0);
+        }
+        
+        if (jogador.getPontuacao() <  dealer.getPontuacao()) {
+            mostrarDialog(this, "Você perdeu!", "Derrota");
+            System.exit(0);
+        }
+        
+        if (jogador.getPontuacao() ==  dealer.getPontuacao()) {
+            mostrarDialog(this, "Empate!", "Empate");
+            System.exit(0);
+        }
+    }//GEN-LAST:event_standBtnActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel cartaCincoLabel;
